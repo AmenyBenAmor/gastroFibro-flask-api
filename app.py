@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 # === Charger le modèle entraîné ===
-MODEL_PATH = "model/best_model.h5"
+MODEL_PATH = "model/my_model.keras"
 model = load_model(MODEL_PATH)
 
 # === Les noms des classes (à adapter selon ton ordre exact) ===
