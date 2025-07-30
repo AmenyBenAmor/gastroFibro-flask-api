@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from tensorflow.keras.models import load_model
+import tensorflow as tf
 from tensorflow.keras.preprocessing.image import img_to_array, load_img
 import numpy as np
 import os
@@ -7,8 +7,9 @@ import os
 app = Flask(__name__)
 
 # === Charger le modèle entraîné ===
-MODEL_PATH = "model/my_model.keras"
-model = load_model(MODEL_PATH)
+MODEL_PATH = "model/my_model_tf"
+model = tf.keras.models.load_model(MODEL_PATH)
+
 
 # === Les noms des classes (à adapter selon ton ordre exact) ===
 class_names = [
